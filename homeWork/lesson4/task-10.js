@@ -13,6 +13,9 @@ console.log(reverse(arr)); // [1,2,3]
 console.log(arr); // МЕНЯЕТ САМ МАССИВ ПО АНАЛОГИИ С МЕТОДОМ ВСТРОЕНЫМ.
 
 function reverse(arr) {
+    if (!Array.isArray(arr)) throw new Error('parameter type should be an array');
+    if (arr.length == 0) throw Error('array length can\'t be 0');
+
     let newArr = [];
 
     for(let i = arr.length - 1; i >= 0; i--) {
